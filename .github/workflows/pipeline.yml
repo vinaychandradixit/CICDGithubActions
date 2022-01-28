@@ -7,7 +7,7 @@ jobs:
           runs-on: ubuntu-latest
           steps:
               - name: pulling python script
-                uses: "hello.py"
+                uses: /hello.py
               - name: running python script
                 run: python hello.py
     build: 
