@@ -1,0 +1,22 @@
+name: CICD pipeline
+on: [push]
+env:
+    ARTIFACT_NAME: myartifact
+jobs:
+    python:
+          runs-on: ubuntu-latest
+          steps:
+              - name: running python script
+                uses: "hello.py"
+                run: python hello.py
+    build: 
+          runs-on: ubuntu-18.04
+          needs: [python]
+
+          steps:
+              - name: building artifact
+                uses: upload-artifact
+                with:
+                    name: ${{ env.ARTIFACT_NAME }}
+                    path: hello.py
+                
