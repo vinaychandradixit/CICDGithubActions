@@ -1,7 +1,5 @@
 name: CICD pipeline
 on: [push]
-env:
-    ARTIFACT_NAME: myartifact
 jobs:
     python:
           runs-on: ubuntu-latest
@@ -18,5 +16,5 @@ jobs:
               - name: building artifact
                 uses: actions/upload-artifact@v2
                 with:
-                    name: ${{ env.ARTIFACT_NAME }}
+                    name: hello
                     path: .
