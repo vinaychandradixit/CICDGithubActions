@@ -19,4 +19,4 @@ jobs:
                 uses: upload-artifact@v2
                 with:
                     name: ${{ env.ARTIFACT_NAME }}
-                    path: hello.py
+                    path: /hello.py
